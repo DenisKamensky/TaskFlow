@@ -22,5 +22,21 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    settings: {
+      'import/resolver': {
+        alias: {
+          map: [
+            ['@', path.resolve(__dirname, 'src')],
+            ['@app', path.resolve(__dirname, 'src/app')],
+            ['@pages', path.resolve(__dirname, 'src/pages')],
+            ['@features', path.resolve(__dirname, 'src/features')],
+            ['@entities', path.resolve(__dirname, 'src/entities')],
+            ['@shared', path.resolve(__dirname, 'src/shared')],
+            ['@assets', path.resolve(__dirname, 'src/assets')]
+          ],
+          extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+        }
+      }
+    },
   },
 ])

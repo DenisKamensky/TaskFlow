@@ -1,0 +1,122 @@
+taskflow-app/
+├── 📁 public/
+│   ├── favicon.ico
+│   └── index.html
+├── 📁 src/
+│   ├── 📁 app/                    # Инициализация приложения
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   └── variables.css
+│   │   ├── providers/
+│   │   │   └── app-providers.tsx  # Провайдеры (Router, Theme, etc.)
+│   │   └── main.tsx
+│   ├── 📁 pages/                  # Страницы приложения
+│   │   ├── tasks/
+│   │   │   ├── ui/
+│   │   │   │   └── tasks-page.tsx
+│   │   │   └── index.ts
+│   │   ├── analytics/
+│   │   │   ├── ui/
+│   │   │   │   └── analytics-page.tsx
+│   │   │   └── index.ts
+│   │   └── settings/
+│   │       ├── ui/
+│   │       │   └── settings-page.tsx
+│   │       └── index.ts
+│   ├── 📁 features/               # Бизнес-фичи пользователя
+│   │   ├── create-task/
+│   │   │   ├── ui/
+│   │   │   │   ├── create-task-form.tsx
+│   │   │   │   └── create-task-modal.tsx
+│   │   │   ├── model/
+│   │   │   │   └── create-task-store.ts
+│   │   │   └── index.ts
+│   │   ├── task-filters/
+│   │   │   ├── ui/
+│   │   │   │   └── task-filters.tsx
+│   │   │   ├── model/
+│   │   │   │   └── task-filters-store.ts
+│   │   │   └── index.ts
+│   │   ├── task-actions/
+│   │   │   ├── ui/
+│   │   │   │   ├── toggle-task.tsx
+│   │   │   │   └── delete-task.tsx
+│   │   │   ├── model/
+│   │   │   │   └── task-actions-store.ts
+│   │   │   └── index.ts
+│   │   └── statistics/
+│   │       ├── ui/
+│   │       │   └── statistics-widget.tsx
+│   │       ├── model/
+│   │       │   └── statistics-calculations.ts
+│   │       └── index.ts
+│   ├── 📁 entities/               # Бизнес-сущности
+│   │   ├── task/
+│   │   │   ├── ui/
+│   │   │   │   ├── task-card/
+│   │   │   │   │   ├── task-card.tsx
+│   │   │   │   │   └── task-card.stories.tsx
+│   │   │   │   └── task-list/
+│   │   │   │       ├── task-list.tsx
+│   │   │   │       └── task-list.stories.tsx
+│   │   │   ├── model/
+│   │   │   │   ├── task-store.ts
+│   │   │   │   ├── task-types.ts
+│   │   │   │   └── task-api.ts
+│   │   │   ├── lib/
+│   │   │   │   └── task-utils.ts
+│   │   │   └── index.ts
+│   │   └── user/
+│   │       ├── model/
+│   │       │   ├── user-store.ts
+│   │       │   └── user-types.ts
+│   │       └── index.ts
+│   ├── 📁 shared/                 # Переиспользуемый код
+│   │   ├── ui/
+│   │   │   ├── button/
+│   │   │   │   ├── button.tsx
+│   │   │   │   ├── button.stories.tsx
+│   │   │   │   └── button.test.tsx
+│   │   │   ├── input/
+│   │   │   │   ├── input.tsx
+│   │   │   │   └── input.stories.tsx
+│   │   │   ├── checkbox/
+│   │   │   │   ├── checkbox.tsx
+│   │   │   │   └── checkbox.stories.tsx
+│   │   │   ├── modal/
+│   │   │   │   ├── modal.tsx
+│   │   │   │   └── modal.stories.tsx
+│   │   │   └── layout/
+│   │   │       ├── header.tsx
+│   │   │       └── sidebar.tsx
+│   │   ├── lib/
+│   │   │   ├── utils/
+│   │   │   │   ├── date-utils.ts
+│   │   │   │   ├── string-utils.ts
+│   │   │   │   └── validation.ts
+│   │   │   ├── constants/
+│   │   │   │   ├── app-constants.ts
+│   │   │   │   └── theme.ts
+│   │   │   └── hooks/
+│   │   │       ├── use-toggle.ts
+│   │   │       ├── use-local-storage.ts
+│   │   │       ├── use-debounce.ts
+│   │   │       └── index.ts
+│   │   ├── api/
+│   │   │   ├── base-api.ts
+│   │   │   ├── http-client.ts
+│   │   │   └── index.ts
+│   │   └── config/
+│   │       └── app-config.ts
+│   └── 📁 stories/               # Storybook stories
+│       ├── introduction.stories.mdx
+│       └── assets/
+├── 📁 .storybook/
+│   └── main.ts
+├── 📁 tests/
+│   ├── e2e/
+│   └── unit/
+├── vite.config.ts
+├── tsconfig.json
+├── package.json
+└── README.md
