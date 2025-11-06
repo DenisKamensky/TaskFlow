@@ -1,13 +1,8 @@
 
 import React from 'react';
 import {useToggle} from '@/shared/hooks/useToggle';
-
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  description?: string;
-}
+import Button from '@/shared/ui/button';
+import {Task} from '../../model/task-types';
 
 interface TaskCardProps {
   task: Task;
@@ -23,12 +18,12 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   const {value: isExpanded, toggle: toggleExpanded } = useToggle(false);
   return (
     <div className="task-card" style={{
-      border: '1px solid #e5e7eb',
-      borderRadius: '8px',
-      padding: '16px',
+      border: '1px solid var(--primary-variant)',
+      borderRadius: 'var(--radius-md)',
+      padding: 'var(--space-md)',
       marginBottom: '12px',
       backgroundColor: '#fff',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+      boxShadow: '0 1px 3px var(--shadowColor)',
     }}>
       {/* Заголовок задачи */}
       <div 
@@ -42,7 +37,7 @@ export const TaskCard: React.FC<TaskCardProps> = ({
         onClick={toggleExpanded}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <input 
+          <input
             type="checkbox"
             checked={task.completed}
             onChange={() => onToggleComplete(task.id)}
@@ -82,33 +77,17 @@ export const TaskCard: React.FC<TaskCardProps> = ({
           )}
           
           <div style={{ display: 'flex', gap: '8px' }}>
-            <button 
+            <Button
               onClick={() => onToggleComplete(task.id)}
-              style={{
-                padding: '6px 12px',
-                border: '1px solid #d1d5db',
-                borderRadius: '4px',
-                backgroundColor: '#f3f4f6',
-                cursor: 'pointer',
-                fontSize: '14px'
-              }}
             >
               {task.completed ? '❌ Отменить' : '✅ Выполнить'}
-            </button>
-            <button 
+            </Button>
+            <Button
               onClick={() => onDelete(task.id)}
-              style={{
-                padding: '6px 12px',
-                border: '1px solid #fca5a5',
-                borderRadius: '4px',
-                backgroundColor: '#fef2f2',
-                color: '#dc2626',
-                cursor: 'pointer',
-                fontSize: '14px'
-              }}
+              type='danger'
             >
               🗑️ Удалить
-            </button>
+            </Button>
           </div>
         </div>
       )}
